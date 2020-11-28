@@ -13,4 +13,16 @@
     <string name="menu_giang">giaDown</string>
     <string name="menu_nguyen">NgSrv</string>
     <string name="menu_setting">NguSet</string>
+
+    <string name="full_name">Giang Nguyen</string>
+    <string name="student_id">301033256</string>
+
+    <string-array name="courses">
+        <item>Networking for Software Developers</item>
+        <item>Data Structures and Algorithms</item>
+        <item>Software Testing and Quality</item>
+        <item>Programming 3</item>
+        <item>Mobile Application Development</item>
+        <item>Linear Algebra and Statistics</item>
+    </string-array>
 </resources>
