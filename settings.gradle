@@ -1,0 +1,2 @@
+include ':giangLab5'
+rootProject.name = "GiangLab5"
