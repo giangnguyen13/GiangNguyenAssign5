@@ -1,11 +1,12 @@
 # Giang Nguyen
+[GitHub Repo](https://github.com/giangnguyen13/GiangNguyenAssign5)
 # Track Me
 
 Track Me is a tracking application which use Google map to track your device in real time
 
 ## Installation
 
-available on Play store only 
+Available on Play store only 
 
 
 ## Contributing
