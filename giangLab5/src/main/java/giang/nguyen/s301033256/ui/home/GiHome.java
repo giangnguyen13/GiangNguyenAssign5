@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import giang.nguyen.s301033256.R;
 
-public class HomeFragment extends Fragment {
+public class GiHome extends Fragment {
 
     private HomeViewModel homeViewModel;
 
@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.gi_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
