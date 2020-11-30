@@ -15,6 +15,8 @@
     <string name="menu_setting">NguSet</string>
 
     <string name="full_name">Giang Nguyen</string>
+    <string name="firstname">Giang</string>
+    <string name="lastname">Nguyen</string>
     <string name="student_id">301033256</string>
 
     <string-array name="courses">
@@ -25,4 +27,6 @@
         <item>Mobile Application Development</item>
         <item>Linear Algebra and Statistics</item>
     </string-array>
+
+    <string name="download_img">Download Image</string>
 </resources>
