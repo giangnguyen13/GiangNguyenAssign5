@@ -34,21 +34,19 @@ public class GiHome extends Fragment {
     ImageButton viewCourseInfoImgBtn;
     Thread thread;
     Handler handler = new Handler();
+    View root;
+    Date c;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        Date c = Calendar.getInstance().getTime();
-
-
+        c = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
         String formattedDate = df.format(c);
-        String time = new SimpleDateFormat("HH:mm:ss").format(c);
 
-
-        View root = inflater.inflate(R.layout.gi_home, container, false);
-
+        root = inflater.inflate(R.layout.gi_home, container, false);
 
         try {
+            startCounting();
             selectCourseSpinner = (Spinner)root.findViewById(R.id.giangCoursesSpinner);
             viewCourseInfoImgBtn = (ImageButton)root.findViewById(R.id.giangViewCourseImgBtn);
             viewCourseInfoImgBtn.setOnClickListener(new View.OnClickListener() {
@@ -74,8 +72,6 @@ public class GiHome extends Fragment {
 
             currentDateTv = (TextView)root.findViewById(R.id.giangCurrentDateTextView);
             currentDateTv.setText(formattedDate);
-            currentTimeTv = (TextView)root.findViewById(R.id.giangTimeTextView);
-            currentTimeTv.setText(time);
         }
         catch (Exception exception){
             Toast.makeText(getActivity(),exception.toString(), Toast.LENGTH_LONG).show();
@@ -84,4 +80,21 @@ public class GiHome extends Fragment {
 
         return root;
     }
+
+    private void startCounting() {
+        handler.post(run);
+    }
+
+    private Runnable run = new Runnable() {
+        @Override
+        public void run() {
+            c = Calendar.getInstance().getTime();
+            String time = new SimpleDateFormat("HH:mm:ss").format(c);
+            currentTimeTv = (TextView)root.findViewById(R.id.giangTimeTextView);
+            currentTimeTv.setText(time);
+//            number++;
+//            tvFragment.setText(number);
+            handler.postDelayed(this, 1000);
+        }
+    };
 }
