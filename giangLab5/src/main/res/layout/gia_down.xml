@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="32dp"
         android:text="@string/firstname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="92dp"
         android:text="@string/download_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,12 +36,23 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:max="100"
-        android:progress="70"
+        android:progress="0"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/giangDownloadImgBtn"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintVertical_bias="0.121" />
+
+    <ImageView
+        android:id="@+id/giangImgView"
+        android:layout_width="match_parent"
+        android:layout_height="268dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giangDownloadImgBtn"
+        tools:src="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
