@@ -29,4 +29,8 @@
     </string-array>
 
     <string name="download_img">Download Image</string>
+    <string name="zipcode_hint">Enter ZIP code</string>
+    <string name="call_api">Web Services</string>
+
+    <string name="api_key">971eb52a984ddb54c6fdef9abe42df92</string>
 </resources>
