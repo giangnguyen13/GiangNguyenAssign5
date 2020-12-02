@@ -2,14 +2,19 @@ package giang.nguyen.s301033256;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -53,6 +58,33 @@ public class GiangActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                Toast.makeText(this,"Select Action setting", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_help:
+                String google = "https://google.ca";
+                Uri webaddress = Uri.parse(google);
+
+                Intent gotoGoogle = new Intent(Intent.ACTION_VIEW, webaddress);
+                if (gotoGoogle.resolveActivity(getPackageManager()) != null){
+                    startActivity(gotoGoogle);
+                }
+                return true;
+            case R.id.action_location:
+                Snackbar.make(findViewById(R.id.drawer_layout), "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                return true;
+            case R.id.action_sms:
+                Toast.makeText(this,"Select sms", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

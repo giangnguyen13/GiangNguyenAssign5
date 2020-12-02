@@ -33,4 +33,7 @@
     <string name="call_api">Web Services</string>
 
     <string name="api_key">971eb52a984ddb54c6fdef9abe42df92</string>
+    <string name="action_sms">SMS</string>
+    <string name="action_localtion">Location</string>
+    <string name="action_help">Help</string>
 </resources>
