@@ -45,7 +45,7 @@ public class GiangActivity extends AppCompatActivity {
     boolean lockPortraitFromShared;
     LocationManager locationManager;
     final private int REQUEST_LOCATION = 123;
-    final private int MY_PERMISSIONS_REQUEST_SEND_SMS = 123;
+    final private int MY_PERMISSIONS_REQUEST_SEND_SMS = 234;
     String phoneNo;
     String message;
     @Override
@@ -75,7 +75,6 @@ public class GiangActivity extends AppCompatActivity {
         lockPortraitFromShared = sharedPreferences.getBoolean("Lock_Portrait",false);
         ActivityCompat.requestPermissions( this,
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
-        checkSMSPermission();
     }
 
     @Override
@@ -121,7 +120,7 @@ public class GiangActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.action_sms:
-                sendSMSMessage();
+                checkSMSPermission();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -244,6 +243,8 @@ public class GiangActivity extends AppCompatActivity {
                 requestPermissions(new String[]{Manifest.permission.SEND_SMS},
                         MY_PERMISSIONS_REQUEST_SEND_SMS);
                 return;
+            }else{
+                sendSMSMessage();
             }
         }
     }
