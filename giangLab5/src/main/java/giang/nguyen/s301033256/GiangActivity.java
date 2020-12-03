@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.telephony.SmsManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -24,6 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -38,8 +40,9 @@ public class GiangActivity extends AppCompatActivity {
     boolean lockPortraitFromShared;
     LocationManager locationManager;
     final private int REQUEST_LOCATION = 123;
-    String latitude;
-    String longitude;
+    final private int MY_PERMISSIONS_REQUEST_SEND_SMS = 123;
+    String phoneNo;
+    String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +72,7 @@ public class GiangActivity extends AppCompatActivity {
         lockPortraitFromShared = sharedPreferences.getBoolean("Lock_Portrait",false);
         ActivityCompat.requestPermissions( this,
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        checkSMSPermission();
     }
 
     @Override
@@ -114,7 +118,7 @@ public class GiangActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.action_sms:
-                Toast.makeText(this,"Select sms", Toast.LENGTH_SHORT).show();
+                sendSMSMessage();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -186,6 +190,61 @@ public class GiangActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             } else {
                 Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    protected void sendSMSMessage() {
+        phoneNo = "4372199055";
+        message = "Hello from the other side.!";
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            Snackbar.make(findViewById(R.id.drawer_layout),"No Permission Allow", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+            checkSMSPermission();
+        }else{
+            try {
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(phoneNo, null, message, null, null);
+                String sms = String.format("Message send to %s.\nContext: %s",phoneNo,message);
+                Snackbar.make(findViewById(R.id.drawer_layout),sms, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }catch (Exception e){
+                Snackbar.make(findViewById(R.id.drawer_layout),e.toString(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Permission Granted
+                    //Toast.makeText(this, "PERMISSION allowed", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Permission Denied
+                    //Toast.makeText(this, "PERMISSION Denied", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+    }
+
+    private void checkSMSPermission() {
+        int hasSMSPermission = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            hasSMSPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+
+            if (hasSMSPermission != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.SEND_SMS},
+                        MY_PERMISSIONS_REQUEST_SEND_SMS);
+                return;
             }
         }
     }
