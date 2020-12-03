@@ -1,23 +1,23 @@
 <resources>
-    <string name="app_name">GiangLab5</string>
+    <string name="app_name" translatable="false">GiangLab5</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Giang Nguyen</string>
-    <string name="nav_header_subtitle">giangkawaii1999@gmail.com</string>
+    <string name="nav_header_title" translatable="false">Giang Nguyen</string>
+    <string name="nav_header_subtitle" translatable="false">giangkawaii1999@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">giHome</string>
+    <string name="menu_home" translatable="false">giHome</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_giang">giaDown</string>
-    <string name="menu_nguyen">NgSrv</string>
-    <string name="menu_setting">NguSet</string>
+    <string name="menu_giang" translatable="false">giaDown</string>
+    <string name="menu_nguyen" translatable="false">NgSrv</string>
+    <string name="menu_setting" translatable="false">NguSet</string>
 
-    <string name="full_name">Giang Nguyen</string>
-    <string name="firstname">Giang</string>
-    <string name="lastname">Nguyen</string>
-    <string name="student_id">301033256</string>
+    <string name="full_name" translatable="false">Giang Nguyen</string>
+    <string name="firstname" translatable="false">Giang</string>
+    <string name="lastname" translatable="false">Nguyen</string>
+    <string name="student_id" translatable="false">301033256</string>
 
     <string-array name="courses">
         <item>Networking for Software Developers</item>
@@ -39,8 +39,8 @@
     <string name="zipcode_hint">Enter ZIP code</string>
     <string name="call_api">Web Services</string>
 
-    <string name="api_key">971eb52a984ddb54c6fdef9abe42df92</string>
-    <string name="action_sms">SMS</string>
+    <string name="api_key" translatable="false">971eb52a984ddb54c6fdef9abe42df92</string>
+    <string name="action_sms" translatable="false">SMS</string>
     <string name="action_localtion">Location</string>
     <string name="action_help">Help</string>
     <string name="color_radio_green">Green</string>
