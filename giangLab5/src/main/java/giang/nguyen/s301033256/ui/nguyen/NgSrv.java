@@ -58,7 +58,6 @@ public class NgSrv extends Fragment {
                     zipcodeTv.setError("Invalid Zipcode format");
                 }else{
                     checkInternetPermission();
-                    //Toast.makeText(getContext(),"BTN WORKING",Toast.LENGTH_SHORT).show();
                     String url = getURL(zipcode,apiKey);
                     AsyncTaskExample asyncTask = new AsyncTaskExample();
                     asyncTask.execute(url);

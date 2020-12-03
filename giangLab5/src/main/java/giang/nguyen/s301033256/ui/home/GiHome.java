@@ -120,10 +120,6 @@ public class GiHome extends Fragment {
                 currentTimeTv = (TextView)root.findViewById(R.id.giangTimeTextView);
                 currentTimeTv.setText(time);
             }
-            //
-
-//            number++;
-//            tvFragment.setText(number);
             handler.postDelayed(this, 1000);
         }
     };

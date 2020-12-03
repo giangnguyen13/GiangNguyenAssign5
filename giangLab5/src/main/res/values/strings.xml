@@ -48,6 +48,7 @@
     <string name="color_radio_yellow">Yellow</string>
     <string name="choose_home_screen_color">Choose home screen color</string>
     <string name="display_time_format">Choose time format</string>
+    <string name="display_text_size">Choose font size</string>
     <string name="hr12_format">12 Hour format</string>
     <string name="hr24_format">24 Hour format</string>
     <string name="save_setting">Save Setting</string>

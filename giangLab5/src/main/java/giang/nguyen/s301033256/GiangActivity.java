@@ -59,8 +59,6 @@ public class GiangActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home)
                 .setDrawerLayout(drawer)
                 .build();
@@ -223,11 +221,7 @@ public class GiangActivity extends AppCompatActivity {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_SEND_SMS:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Permission Granted
-                    //Toast.makeText(this, "PERMISSION allowed", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Permission Denied
-                    //Toast.makeText(this, "PERMISSION Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
