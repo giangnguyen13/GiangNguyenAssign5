@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    /**-->
+    <!--    * Giang Nguyen-->
+    <!--    * Student# 301033256-->
+    <!--    * Lab 5 - COPM304-->
+    <!--    * Professor Haki Sharifi-->
+    <!--    * */-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

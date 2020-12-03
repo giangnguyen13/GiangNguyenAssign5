@@ -28,7 +28,12 @@ import java.util.Locale;
 
 import giang.nguyen.s301033256.GiangActivity;
 import giang.nguyen.s301033256.R;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class GiHome extends Fragment {
     TextView currentTimeTv;
     TextView currentDateTv;

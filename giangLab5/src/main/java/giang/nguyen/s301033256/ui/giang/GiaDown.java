@@ -33,7 +33,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import giang.nguyen.s301033256.R;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class GiaDown extends Fragment {
 
     private GiangViewModel mViewModel;

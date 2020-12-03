@@ -28,7 +28,12 @@ import java.net.URL;
 
 import giang.nguyen.s301033256.R;
 import giang.nguyen.s301033256.ui.giang.GiaDown;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class NgSrv extends Fragment {
 
     private NgSrvViewModel mViewModel;

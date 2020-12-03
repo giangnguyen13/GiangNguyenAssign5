@@ -24,7 +24,12 @@ import android.widget.Toast;
 
 import giang.nguyen.s301033256.GiangActivity;
 import giang.nguyen.s301033256.R;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class NguSet extends Fragment {
 
     private NguSetViewModel mViewModel;
