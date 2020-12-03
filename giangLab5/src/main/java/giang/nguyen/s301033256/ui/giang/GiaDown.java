@@ -33,7 +33,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import giang.nguyen.s301033256.R;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class GiaDown extends Fragment {
 
     private GiangViewModel mViewModel;
@@ -43,10 +48,7 @@ public class GiaDown extends Fragment {
     Bitmap bmImg = null;
     ImageView imageView= null;
     ProgressBar p;
-
     View root;
-    ProgressBar loading;
-
     final String fileName = "yoshino1234.png";
     final String imageURL = "https://i.redd.it/1rlog9bjz1041.jpg";
 
@@ -145,17 +147,6 @@ public class GiaDown extends Fragment {
             return bmImg;
         }
 
-//        @Override
-//        protected void onProgressUpdate(String... values) {
-//            //super.onProgressUpdate(values);
-//            int x = values.length;
-//            for (int i = 0; i < x; i++){
-//                p.setProgress((int) ((i / (float) x) * 100));
-//            }
-//            //p.setProgress(Integer.parseInt(values[0]));
-//        }
-
-
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             super.onPostExecute(bitmap);
@@ -184,47 +175,6 @@ public class GiaDown extends Fragment {
 
             if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        REQUEST_CODE_ASK_PERMISSIONS);
-                return;
-            }
-        }
-    }
-
-    private void checkReadPermission() {
-        int hasWriteContactsPermission = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            hasWriteContactsPermission = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
-
-            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        REQUEST_CODE_ASK_PERMISSIONS);
-                return;
-            }
-        }
-    }
-
-    private void checkInternetPermission() {
-        int hasWriteContactsPermission = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            hasWriteContactsPermission = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.INTERNET);
-
-            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.INTERNET},
-                        REQUEST_CODE_ASK_PERMISSIONS);
-                return;
-            }
-        }
-    }
-
-    private void checkPermission() {
-        int hasWriteContactsPermission = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            hasWriteContactsPermission = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.INTERNET);
-
-            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE
-                                ,Manifest.permission.INTERNET
-                                ,Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         REQUEST_CODE_ASK_PERMISSIONS);
                 return;
             }

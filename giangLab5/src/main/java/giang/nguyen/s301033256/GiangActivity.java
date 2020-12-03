@@ -33,14 +33,19 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class GiangActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     boolean lockPortraitFromShared;
     LocationManager locationManager;
     final private int REQUEST_LOCATION = 123;
-    final private int MY_PERMISSIONS_REQUEST_SEND_SMS = 123;
+    final private int MY_PERMISSIONS_REQUEST_SEND_SMS = 234;
     String phoneNo;
     String message;
     @Override
@@ -59,8 +64,6 @@ public class GiangActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home)
                 .setDrawerLayout(drawer)
                 .build();
@@ -72,7 +75,6 @@ public class GiangActivity extends AppCompatActivity {
         lockPortraitFromShared = sharedPreferences.getBoolean("Lock_Portrait",false);
         ActivityCompat.requestPermissions( this,
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
-        checkSMSPermission();
     }
 
     @Override
@@ -118,7 +120,7 @@ public class GiangActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.action_sms:
-                sendSMSMessage();
+                checkSMSPermission();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -223,11 +225,7 @@ public class GiangActivity extends AppCompatActivity {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_SEND_SMS:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Permission Granted
-                    //Toast.makeText(this, "PERMISSION allowed", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Permission Denied
-                    //Toast.makeText(this, "PERMISSION Denied", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
@@ -245,6 +243,8 @@ public class GiangActivity extends AppCompatActivity {
                 requestPermissions(new String[]{Manifest.permission.SEND_SMS},
                         MY_PERMISSIONS_REQUEST_SEND_SMS);
                 return;
+            }else{
+                sendSMSMessage();
             }
         }
     }

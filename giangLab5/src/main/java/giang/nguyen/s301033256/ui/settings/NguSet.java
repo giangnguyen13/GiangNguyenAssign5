@@ -24,7 +24,12 @@ import android.widget.Toast;
 
 import giang.nguyen.s301033256.GiangActivity;
 import giang.nguyen.s301033256.R;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class NguSet extends Fragment {
 
     private NguSetViewModel mViewModel;
@@ -80,8 +85,6 @@ public class NguSet extends Fragment {
                 break;
         }
 
-
-
         try {
             saveSetting = (Button)root.findViewById(R.id.giangSaveSettingBtn);
             fontSizeSpinner = (Spinner)root.findViewById(R.id.giangFontSizeSpinner);
@@ -118,8 +121,6 @@ public class NguSet extends Fragment {
         }catch (Exception exception){
             Toast.makeText(getContext(),exception.toString(),Toast.LENGTH_SHORT).show();
         }
-
-        Button btnRetrieve = (Button)root.findViewById(R.id.button2);
 
         return root;
     }

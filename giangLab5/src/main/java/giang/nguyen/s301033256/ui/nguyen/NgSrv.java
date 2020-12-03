@@ -28,7 +28,12 @@ import java.net.URL;
 
 import giang.nguyen.s301033256.R;
 import giang.nguyen.s301033256.ui.giang.GiaDown;
-
+/**
+ * Giang Nguyen
+ * Student# 301033256
+ * Lab 5 - COPM304
+ * Professor Haki Sharifi
+ * */
 public class NgSrv extends Fragment {
 
     private NgSrvViewModel mViewModel;
@@ -58,7 +63,6 @@ public class NgSrv extends Fragment {
                     zipcodeTv.setError("Invalid Zipcode format");
                 }else{
                     checkInternetPermission();
-                    //Toast.makeText(getContext(),"BTN WORKING",Toast.LENGTH_SHORT).show();
                     String url = getURL(zipcode,apiKey);
                     AsyncTaskExample asyncTask = new AsyncTaskExample();
                     asyncTask.execute(url);
@@ -112,7 +116,7 @@ public class NgSrv extends Fragment {
                     Log.println(Log.DEBUG,"humidity",String.format("%f",humidity));
                     String name = jsonObject.getString("name");
                     Log.println(Log.DEBUG,"name",name);
-                    output.setText(String.format("%.2f %.2f g%.2f %s %s",lon,lat,humidity,name,zipcode));
+                    output.setText(String.format("%.2f %.2f %.2f %s %s",lon,lat,humidity,name,zipcode));
                 } catch (JSONException e) {
                     output.setText("Invalid response");
                     e.printStackTrace();

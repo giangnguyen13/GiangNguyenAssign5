@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    /**-->
+    <!--    * Giang Nguyen-->
+    <!--    * Student# 301033256-->
+    <!--    * Lab 5 - COPM304-->
+    <!--    * Professor Haki Sharifi-->
+    <!--    * */-->
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">23 / 5000 Translation results Fermer le panneau de navigation</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_settings">Réglages</string>
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Diaporama</string>
+    <string name="download_img">Télécharger l\'image</string>
+    <string name="zipcode_hint">Entrer le code postal</string>
+    <string name="call_api">Services Web</string>
+    <string name="action_localtion">Emplacement</string>
+    <string name="action_help">Aidez-moi</string>
+    <string name="color_radio_green">Verte</string>
+    <string name="color_radio_light_blue">Bleu clair</string>
+    <string name="color_radio_yellow">Jaune</string>
+    <string name="choose_home_screen_color">Choisissez la couleur de l\'écran d\'accueil</string>
+    <string name="display_time_format">Choisissez le format de l\'heure</string>
+    <string name="display_text_size">Choisissez la taille de la police</string>
+    <string name="hr12_format">Format 12 heures</string>
+    <string name="hr24_format">Format 24 heures</string>
+    <string name="save_setting">Sauvegarder les paramètres</string>
+    <string name="portrait_mode">Mode portrait</string>
+</resources>
