@@ -33,7 +33,9 @@ public class NguSet extends Fragment {
     Button saveSetting;
     Spinner fontSizeSpinner;
     RadioButton backgroundRadioButton;
+    RadioButton backgroundCurrentRadioButton;
     RadioButton timeFormatRadioButton;
+    RadioButton timeFormatCurrentRadioButton;
     Switch portraitModeSwitch;
 
     public static NguSet newInstance() {
@@ -46,10 +48,46 @@ public class NguSet extends Fragment {
         root = inflater.inflate(R.layout.ngu_set, container, false);
         final SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(getContext());
+
+        String backgroundColorFromShared = sharedPreferences.getString("Background_Color","THIS IS DEFAULT VALUE");
+        String timeFormatFromShared = sharedPreferences.getString("Time_Format","THIS IS DEFAULT VALUE");
+        int fontSizeFromShared = sharedPreferences.getInt("Font_Size",-99);
+        boolean lockPortraitFromShared = sharedPreferences.getBoolean("Lock_Portrait",false);
+
+        switch (backgroundColorFromShared){
+            case "Green":
+                backgroundCurrentRadioButton = (RadioButton)root.findViewById(R.id.giangGreenRbtn);
+                backgroundCurrentRadioButton.setChecked(true);
+                break;
+            case "Light Blue":
+                backgroundCurrentRadioButton = (RadioButton)root.findViewById(R.id.giangLightBlueRbtn);
+                backgroundCurrentRadioButton.setChecked(true);
+                break;
+            case "Yellow":
+                backgroundCurrentRadioButton = (RadioButton)root.findViewById(R.id.giangYellowRbtn);
+                backgroundCurrentRadioButton.setChecked(true);
+                break;
+        }
+
+        switch (timeFormatFromShared){
+            case "12 Hour format":
+                timeFormatCurrentRadioButton = (RadioButton)root.findViewById(R.id.giang12HrsRbtn);
+                timeFormatCurrentRadioButton.setChecked(true);
+                break;
+            case "24 Hour format":
+                timeFormatCurrentRadioButton = (RadioButton)root.findViewById(R.id.giang24HrsRbtn);
+                timeFormatCurrentRadioButton.setChecked(true);
+                break;
+        }
+
+
+
         try {
             saveSetting = (Button)root.findViewById(R.id.giangSaveSettingBtn);
             fontSizeSpinner = (Spinner)root.findViewById(R.id.giangFontSizeSpinner);
             portraitModeSwitch = (Switch )root.findViewById(R.id.portraitModeSwitch);
+            portraitModeSwitch.setChecked(lockPortraitFromShared);
+            fontSizeSpinner.setSelection(getIndex(fontSizeSpinner, String.format("%d",fontSizeFromShared)));
 
             saveSetting.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,20 +121,6 @@ public class NguSet extends Fragment {
 
         Button btnRetrieve = (Button)root.findViewById(R.id.button2);
 
-        btnRetrieve.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String backgroundColorFromShared = sharedPreferences.getString("Background_Color","THIS IS DEFAULT VALUE");
-                String timeFormatFromShared = sharedPreferences.getString("Time_Format","THIS IS DEFAULT VALUE");
-                int fontSizeFromShared = sharedPreferences.getInt("Font_Size",-99);
-                boolean lockPortraitFromShared = sharedPreferences.getBoolean("Lock_Portrait",false);
-                Toast.makeText(getContext(),
-                        String.format("%d %s %s %b",
-                                fontSizeFromShared,backgroundColorFromShared,timeFormatFromShared,lockPortraitFromShared),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
         return root;
     }
 
@@ -107,4 +131,13 @@ public class NguSet extends Fragment {
         // TODO: Use the ViewModel
     }
 
+    //private method of your class
+    private int getIndex(Spinner spinner, String myString){
+        for (int i=0;i<spinner.getCount();i++){
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)){
+                return i;
+            }
+        }
+        return 0;
+    }
 }

@@ -17,19 +17,19 @@
 
         <RadioButton
             android:checked="true"
-            android:id="@+id/radioButton3"
+            android:id="@+id/giangLightBlueRbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/color_radio_light_blue" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/giangGreenRbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/color_radio_green" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/giangYellowRbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/color_radio_yellow" />
@@ -66,14 +66,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/giang12HrsRbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hr12_format" />
 
         <RadioButton
             android:checked="true"
-            android:id="@+id/radioButton4"
+            android:id="@+id/giang24HrsRbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hr24_format" />
