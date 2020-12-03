@@ -28,9 +28,28 @@
         <item>Linear Algebra and Statistics</item>
     </string-array>
 
+    <string-array name="font_size">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
     <string name="download_img">Download Image</string>
     <string name="zipcode_hint">Enter ZIP code</string>
     <string name="call_api">Web Services</string>
 
     <string name="api_key">971eb52a984ddb54c6fdef9abe42df92</string>
+    <string name="action_sms">SMS</string>
+    <string name="action_localtion">Location</string>
+    <string name="action_help">Help</string>
+    <string name="color_radio_green">Green</string>
+    <string name="color_radio_light_blue">Light Blue</string>
+    <string name="color_radio_yellow">Yellow</string>
+    <string name="choose_home_screen_color">Choose home screen color</string>
+    <string name="display_time_format">Choose time format</string>
+    <string name="hr12_format">12 Hour format</string>
+    <string name="hr24_format">24 Hour format</string>
+    <string name="save_setting">Save Setting</string>
+    <string name="portrait_mode">Portrait Mode</string>
 </resources>
